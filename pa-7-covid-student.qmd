@@ -172,8 +172,7 @@ mutate(percent = total / estimate)|>
 
 **Which state had highest number of COVID-19 cases relative to population size between January 2020 and March 2023?**
 
->Insert Answer Here
-
+>Rhode Island 
 
 ### Other Questions
 **What are some possible issues with our analysis? Consider the following:**  
@@ -182,12 +181,12 @@ mutate(percent = total / estimate)|>
 - Time scale and impact of time    
 - 
 
->Insert Answer Here
+>How they retrieved the data could be biased or leave some information out, leave some missing or unacounted covid cases. 
 
 
 **What other questions would you like to try to answer using this data? Would that require other data sources? What information would you need to answer your questions?**
 
->Insert Answer Here  
+> Vaccination rate in relation to this data could be intresting. Average age as well as if the individual is imuno compromised could shed more light into the impact of covid.   
 
 
 
