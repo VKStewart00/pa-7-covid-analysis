@@ -91,13 +91,20 @@ Now use the `states_totals` and identify the top ten states/territories with the
 
 state_totals |> 
   ## order the data by total cases
-  arrange( total )|>
+
   ## extract just the top ten (Hint - look at the `slice() functions)
   slice_max(order_by = total, 
-            n = 10)
+            n = 10) |>
   ## create a bar chart with x as the totals and y as the state names
+  ggplot(aes(x= total,
+             y = fct_reorder(state, total))) +
+  geom_col(aes (fill = state)) +
   ## order the states by greatest to smallest total on the graph
+  
   ## label, color, update as necessary to provide all relevant information
+  labs(x = "Total",
+       y = "States",
+       title = "Top Ten States with most Covid Cases")
 ```
 
 ### Canvas Quiz Question 1
