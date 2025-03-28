@@ -111,13 +111,13 @@ state_totals |>
 
 **Which state had the most COVID-19 cases between January 2020 and March 2023?**
 
->Insert Answer Here
+>California had the most cases from January 2020 and March 2023. There is also a higher population in California, so there is a higher number of cases in the area that might contribute to this total. 
 
 
 ### Other Question
 **Is this the best way to look at our data? Is looking at just the total number of cases the best way to compare states?**
 
->Insert Answer Here
+>No, looking at the cases per cappa might be better. Because some states have a higher number of population, this total number of cases could be read as a lot of people compared to a state with fewer people. 
 
 
 
