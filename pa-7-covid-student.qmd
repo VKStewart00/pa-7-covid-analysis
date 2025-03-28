@@ -59,7 +59,10 @@ Note - there may be an error in the code below.
 ```{r}
 #| label: read-clean-covid-cases
 
-cases <- read_csv("covid_cases_us.csv")
+cases <- read_csv("data/covid_cases_us.csv")
+
+
+
 ```
 
 
@@ -72,9 +75,9 @@ Correct the errors and then assign the resulting data to `state_totals`.
 ```{r}
 #| label: calculate-totals
 
-cases |> 
-  groupby(state) |> 
-  sum(total = sum(case_daily)) |> 
+state_totals <- cases |> 
+  group_by(state) |> 
+  summarise(total = sum( cases_daily )) |> 
   ungroup() # this is useful to do after a group_by calculation is complete so you do not continue grouping by those variables 
 ```
 
