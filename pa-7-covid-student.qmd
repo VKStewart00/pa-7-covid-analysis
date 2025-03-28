@@ -136,7 +136,7 @@ Note - there may be an error in the code below.
 
 ```{r}
 #| label: us-state-population-data
-us_pop <- read_csv("USpop2019.csv")
+us_pop <- read_csv("Data/USpop2019.csv")
 ```
 
 ### Which 10 US States/Territories had the most COVID-19 Cases Relative to Population Size from January 2020-March 2023
@@ -146,12 +146,23 @@ Choose one of the above statistics to calculate to make our comparison between s
 ```{r}
 state_totals |> 
   ## add in column with state population sizes  
+  left_join(us_pop,
+            by = c("state" = "NAME")) |>
   ## calculate your chosen relative rate (e.g. proportion, percentage, rate)
+mutate(percent = total / estimate)|>
   ## order the data by your relative rate
   ## extract just the top ten (Hint - look at the `slice() functions)
+    slice_max(order_by = percent, 
+            n = 10) |>
   ## create a bar chart with x as the relative rate and y as the state names
+   ggplot(aes(x= percent,
+             y = fct_reorder(state, percent))) +
+  geom_col(aes (fill = state)) +
   ## order the states by greatest to smallest relative rate on the graph
   ## label, color, update as necessary to provide all relevant information
+  labs(x = "Percent",
+       y = "States",
+       title = "Top Ten States with most Covid Cases")
 ```
 
 
